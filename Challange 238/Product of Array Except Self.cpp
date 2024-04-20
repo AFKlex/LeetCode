@@ -55,31 +55,6 @@ public:
             
         }
 
-        
-        
-
-
-
-/*
-        for(int i = 0; i<nums.size();i++){ // Simple Solution but the runtime is not right. 
-            suffix = 1;
-            prefix =1;
-            for(int j =0; j<i;j++){
-                prefix *=nums[j];
-            }
-
-            for(int j =i+1; j<nums.size();j++){
-                suffix *=nums[j];
-            }
-
-            //std::cout << "Prefix =" << prefix << " Suffix =" << suffix << std::endl; 
-
-            productExceptSelf.push_back(prefix*suffix);
-            
-
-        }
-*/
-
         return productExceptSelf; 
     }
 };
