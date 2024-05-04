@@ -16,67 +16,35 @@ public:
         
         ListNode * start = head; 
 
-        // if(head->next == nullptr){
-        //     return nullptr;
-        // }else if(head->next->next == nullptr){
-        //     if(n==1){
-        //     head->next = nullptr; 
-        //     return head; 
-        //     }else{
-        //         return head->next; 
-        //     }
-            
-            
-        // }
-
-        //printList(start); 
-
+        if(head->next == nullptr){
+            return nullptr;
+        }else if(head->next->next == nullptr){
+            if(n==1){
+            head->next = nullptr; 
+            return head; 
+            }else{
+                return head->next; 
+            }
+        }
         int array_Size =n+1;
         ListNode * lastElements[array_Size]; 
         int count = 0; 
         while(head !=nullptr){
-           
-            //std::cout << count << std::endl;
-            //std::cout << head->val << " " << count%array_Size << std::endl;
             lastElements[count%array_Size] = head; 
-            
             count++; 
-
-
-
             head = head->next; 
 
         }
-        std::cout << "Count "<< count << std::endl; 
-        std::cout << "Array Size" << array_Size << std::endl; 
-        
         if(n == 1){
-
             lastElements[count%array_Size]->next = nullptr;
-            
-
         }else if(n == count){
-            
             start = start->next; 
-
         }
         else if(lastElements[count%array_Size] != lastElements[(count+2)%array_Size] ){
-
                     lastElements[count%array_Size]->next = lastElements[(count+2)%array_Size];
 
         }
-        
-
-
-
-        // for(int i=0; i<array_Size; i++){
-        //     std::cout << lastElements[i]->val << " ";
-        // }
-        // std::cout << std::endl; 
-
-        printList(start); 
-
-        return start;
+       return start;
 
     }
 
